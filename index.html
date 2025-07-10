@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+        <div id="box">
+            <input type="text" id="res" placeholder="0" disabled>
+            <div id="space"></div>
+            <div id="keypad">
+                <button class="opr" id="percent">%</button>
+                <button class="opr" id="clear">CE</button>
+                <button class="opr" id="clear2">C</button>
+                <button class="opr" id="backspace"><svg  xmlns="http://www.w3.org/2000/svg"  width="28"  height="28"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-backspace"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 6a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-11l-5 -5a1.5 1.5 0 0 1 0 -2l5 -5z" /><path d="M12 10l4 4m0 -4l-4 4" /></svg></button>
+                <button class="opr" id="reciprocal">1/x</button>
+                <button class="opr" id="square">x²</button>
+                <button class="opr" id="root">&radic;x</button>
+                <button class="opr" id="divide">&#xF7; </button>
+                <button class="btns">7</button>
+                <button class="btns">8</button>
+                <button class="btns">9</button>
+                <button class="opr" id="multiply">&#215;</button>
+                <button class="btns">4</button>
+                <button class="btns">5</button>
+                <button class="btns">6</button>
+                <button class="opr" id="minus">-</button>
+                <button class="btns">1</button>
+                <button class="btns">2</button>
+                <button class="btns">3</button>
+                <button class="opr" id="add">+</button>
+                <button class="btns" id="neg">+/-</button>
+                <button class="btns">0</button>
+                <button class="btns">.</button>
+                <button class="opr" id="equal">=</button>
+                
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20241015/pngtree-abstract-watercolor-background-with-pastel-colors-like-light-blue-and-pink-image_16394760.jpg);
+    background-size: cover;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items:end;
+    padding:5px;
+    background-color: rgba(26, 26, 26, 0.99);
+}
+
+#res {
+    width: 70vw;
+    height:17vh;
+    background-color: transparent;
+    font-size:90px;
+    color:white;
+    text-align: right;
+    border:none;
+}
+
+#box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#space {
+    width: 70vw;
+    height:7vh;
+}
+
+#keypad {
+    width: 70vw;
+    height:64vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:2px;
+    font-family: "Roboto", arial;
+}
+
+.btns {
+    background-color: rgba(184, 184, 184, 0.188);
+    border-radius: 6px;
+    color:white;
+    border: none;
+    font-size: 22px;
+}
+
+.btns:hover {
+    background-color: rgba(147, 147, 147, 0.188);
+}
+
+.btns:active{
+    background-color: rgba(119, 119, 119, 0.188);
+}
+
+.opr {
+    background-color: rgba(147, 147, 147, 0.188);
+    border-radius: 4px;
+    color:white;
+    border: none;
+    font-size: 22px;
+}
+
+.opr:hover{
+    background-color:rgba(184, 184, 184, 0.188) ;
+}
+
+.opr:active{
+    background-color: rgba(147, 147, 147, 0.188);
+}
+
+#equal {
+    background-color: #02b3ff;
+    color:rgba(26, 26, 26, 0.99);
+}
+
+#equal:hover {
+    background-color: #01a2e6;
+}
+
+#equal:active{
+    background-color: #027db3;
+}
