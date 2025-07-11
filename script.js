@@ -1,6 +1,13 @@
 let inputStr=""; let prevInputStr="";
 let resStr=""; let prevResStr="";
 
+let input=document.getElementById("res");
+function resAdd() {
+    input.value=inputStr;
+    input.scrollLeft = input.scrollWidth;
+}
+
+
 document.querySelector("#percent").onclick=(()=>{
     if (!"1234567890()".includes(resStr.slice(-1))){
         inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
@@ -9,27 +16,27 @@ document.querySelector("#percent").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr+="%";
     resStr+="*0.01";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#clear").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr="";
     resStr="";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#clear2").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr="";
     resStr="";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#backspace").onclick=(()=>{    
     inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
     resStr=prevResStr; prevResStr=prevResStr.slice(0,-1);
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#reciprocal").onclick=(()=>{
@@ -41,7 +48,7 @@ document.querySelector("#reciprocal").onclick=(()=>{
         prevInputStr=inputStr ; prevResStr=resStr;
         inputStr=`1/(${inputStr})`;
         resStr=`1/(${resStr})`;
-        document.querySelector("#res").value=inputStr;
+        resAdd();
     }
 })
 
@@ -53,7 +60,7 @@ document.querySelector("#square").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr=inputStr+"^2";
     resStr=resStr+"**2";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#root").onclick=(()=>{
@@ -65,7 +72,7 @@ document.querySelector("#root").onclick=(()=>{
         prevInputStr=inputStr ; prevResStr=resStr;
         inputStr= Math.sqrt(eval(resStr));
         resStr= Math.sqrt(eval(resStr));
-        document.querySelector("#res").value=inputStr;
+        resAdd();
     }
 })
 
@@ -77,7 +84,7 @@ document.querySelector("#divide").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr+="÷";
     resStr+="/";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#multiply").onclick=(()=>{
@@ -88,7 +95,7 @@ document.querySelector("#multiply").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr+="×";
     resStr+="*";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#add").onclick=(()=>{
@@ -99,7 +106,7 @@ document.querySelector("#add").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr+="+";
     resStr+="+";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#minus").onclick=(()=>{
@@ -110,7 +117,7 @@ document.querySelector("#minus").onclick=(()=>{
     prevInputStr=inputStr ; prevResStr=resStr;
     inputStr+="-";
     resStr+="-";
-    document.querySelector("#res").value=inputStr;
+    resAdd();
 })
 
 document.querySelector("#equal").onclick=(()=>{
@@ -121,7 +128,7 @@ document.querySelector("#equal").onclick=(()=>{
     if(inputStr!==""){
         prevInputStr=inputStr ; prevResStr=resStr;
         inputStr=eval(resStr);
-        document.querySelector("#res").value=inputStr;
+        resAdd();
     }
 })
 
@@ -136,7 +143,7 @@ btns.forEach((btn,idx)=>{
             }
             prevInputStr=inputStr ; prevResStr=resStr;
             inputStr=eval(resStr)*(-1);
-            document.querySelector("#res").value=inputStr;
+            resAdd();
         }
     }
     else{
@@ -144,7 +151,7 @@ btns.forEach((btn,idx)=>{
             prevInputStr=inputStr ; prevResStr=resStr;
             inputStr+=x;
             resStr+=x;
-            document.querySelector("#res").value=inputStr;
+            resAdd();
         }
     }
 })
