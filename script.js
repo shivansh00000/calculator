@@ -129,6 +129,8 @@ document.querySelector("#equal").onclick=(()=>{
         prevInputStr=inputStr ; prevResStr=resStr;
         inputStr=eval(resStr);
         resAdd();
+        inputStr="";
+        resStr="";        
     }
 })
 
@@ -155,4 +157,92 @@ btns.forEach((btn,idx)=>{
         }
     }
 })
+
+document.body.addEventListener('keydown', (event) => {
+    document.body.classList.add("hide-cursor");
+    
+    if(event.key=="=") {
+        if (!"1234567890()".includes(resStr.slice(-1))){
+            inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+            resStr=prevResStr;
+        }
+        if(inputStr!==""){
+            prevInputStr=inputStr ; prevResStr=resStr;
+            inputStr=eval(resStr);
+            resAdd();
+            inputStr="";
+            resStr="";
+        }
+    }
+    if(event.key=="Enter") {
+        if (!"1234567890()".includes(resStr.slice(-1))){
+            inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+            resStr=prevResStr;
+        }
+        if(inputStr!==""){
+            prevInputStr=inputStr ; prevResStr=resStr;
+            inputStr=eval(resStr);
+            resAdd();    
+            inputStr="";
+            resStr="";         
+        }
+    }
+    if(event.key=="Backspace"){
+        inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+        resStr=prevResStr; prevResStr=prevResStr.slice(0,-1);
+        resAdd();
+    }
+    if(event.key=="+" || event.key=="-"){
+        if (!"1234567890()".includes(resStr.slice(-1))){
+            inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+            resStr=prevResStr;
+        }
+        prevInputStr=inputStr ; prevResStr=resStr;
+        inputStr+=event.key;
+        resStr+=event.key;
+        resAdd();
+    }
+    if(event.key=="/"){
+        if (!"1234567890()".includes(resStr.slice(-1))){
+            inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+            resStr=prevResStr;
+        }
+        prevInputStr=inputStr ; prevResStr=resStr;
+        inputStr+="÷";
+        resStr+="/";
+        resAdd();
+    }
+    
+    if(event.key=="*"){
+        if (!"1234567890()".includes(resStr.slice(-1))){
+            inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+            resStr=prevResStr;
+        }
+        prevInputStr=inputStr ; prevResStr=resStr;
+        inputStr+="×";
+        resStr+="*";
+        resAdd();
+    }
+    if(event.key=="%"){
+        if (!"1234567890()".includes(resStr.slice(-1))){
+            inputStr=prevInputStr; prevInputStr=prevInputStr.slice(0,-1);
+            resStr=prevResStr;
+        }
+        prevInputStr=inputStr ; prevResStr=resStr;
+        inputStr+="%";
+        resStr+="*0.01";
+        resAdd();
+    }
+    if("1234567890().".includes(event.key)){
+        prevInputStr=inputStr ; prevResStr=resStr;
+        inputStr+=event.key;
+        resStr+=event.key;
+        resAdd();
+    }
+
+})
+document.addEventListener("mousemove", () => {
+    document.body.classList.remove("hide-cursor");
+})
+
 
