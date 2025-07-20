@@ -22,7 +22,7 @@ html,body{
 }
 
 #res {
-    max-width: 70vw;
+    width: 70vw;
     height:17vh;
     background-color: transparent;
     font-size:90px;
